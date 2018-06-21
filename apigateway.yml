@@ -1,0 +1,37 @@
+server: 
+  port: 8083
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - info
+        - health
+        - routes
+    
+    
+zuul:
+  routes:
+    dockerapp : 
+      path : /api/dockerapp/v1/**
+      serviceId: dockerapp
+hystrix : 
+  command : 
+    default : 
+      execution : 
+        isolation : 
+          timeout : 
+            enabled : false
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 60000 
+eureka:
+  instance :
+    prefer-ip-address : true
+  client:
+    enabled : true
+    register-with-eureka : true
+    fetch-registry : true
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/ 
