@@ -7,8 +7,8 @@ eureka:
   client:
     enabled : true
     register-with-eureka : true
-    fetch-registry : true
+    #fetch-registry : true
     serviceUrl:
       defaultZone: http://eureka:8761/eureka/
 sample :
-    message : Message From Config Server
+    message : Message From Config Serversss
