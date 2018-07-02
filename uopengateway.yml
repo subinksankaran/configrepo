@@ -1,5 +1,5 @@
 server: 
-  port: 8083
+  port: 8080
 
 management:
   endpoints:
@@ -16,6 +16,15 @@ zuul:
     dockerapp : 
       path : /api/dockerapp/v1/**
       serviceId: dockerapp
+    uopenrs :
+      stripPrefix : false
+      path : /uopenrs/**
+      serviceId : uopenrs
+    uopenmc :
+      stripPrefix : false
+      path : /uopenmc/**
+      serviceId : uopenmc
+      
 hystrix : 
   command : 
     default : 
