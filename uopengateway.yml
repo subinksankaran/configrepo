@@ -18,10 +18,12 @@ zuul:
       serviceId: dockerapp
     uopenrs :
       stripPrefix : false
+      sensitiveHeaders :
       path : /uopenrs/**
       serviceId : uopenrs
     uopenmc :
       stripPrefix : false
+      sensitiveHeaders : 
       path : /uopenmc/**
       serviceId : uopenmc
       
